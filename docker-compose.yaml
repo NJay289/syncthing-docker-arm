@@ -5,10 +5,12 @@ services:
         context: .
     restart: always
     container_name: syncthing
-    ports:
-      - 0.0.0.0:8384:8384
-      - 22000:22000
-      - 21027:21027
+    # Use network_mode or ports. See Docker reference for difference. 'host' is needed for local discovery.
+    network_mode: 'host'
+    #ports:
+    #  - 0.0.0.0:8384:8384
+    #  - 22000:22000
+    #  - 21027:21027
     volumes:
       # Adjust to your needs
        - /mnt/hdd1/syncthing_data:/var/syncthing
