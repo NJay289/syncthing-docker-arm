@@ -1,5 +1,6 @@
 ARG GOVERSION=latest
 FROM golang:$GOVERSION AS builder
+COPY qemu-arm-static /usr/bin
 
 WORKDIR /git
 RUN git clone --single-branch --branch release https://github.com/syncthing/syncthing.git
