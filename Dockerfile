@@ -2,7 +2,7 @@ ARG GOVERSION=latest
 FROM golang:$GOVERSION AS builder
 
 WORKDIR /git
-RUN git clone --single-branch --branch release https://github.com/syncthing/syncthing.git
+RUN git clone --depth 1 --branch v1.7.1 https://github.com/syncthing/syncthing.git
 WORKDIR /src
 RUN cp -r /git/syncthing/. .
 
