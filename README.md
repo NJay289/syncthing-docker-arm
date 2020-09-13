@@ -17,7 +17,7 @@ services:
     # use build instead of image if you want to build the image by yourself
     build: 
         context: .
-    image: njay289/syncthing-arm:latest
+    image: neilschark/syncthing-arm:latest
     restart: always
     container_name: syncthing
     # Use network_mode or ports. See Docker reference for difference. 'host' is needed for local discovery.
